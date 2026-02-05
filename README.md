@@ -34,10 +34,12 @@ src/
 │   ├── ThemeContext.jsx     # 다크/라이트 모드, localStorage 유지
 │   └── CalculatorContext.jsx # 입력값, 연산자, lastExpression, 히스토리
 └── components/
-    ├── Calculator.jsx       # 계산기 패널 (배경/테마)
-    ├── CalculatorDisplay.jsx # 상단 표시(회색 식 + 메인 숫자), 스크롤바 숨김
-    ├── CalculatorKeypad.jsx # C, +/-, %, ÷×−+, 숫자, ., ⌫, =
-    └── History.jsx          # 기록 목록, 클릭 시 해당 결과를 입력창에 로드
+    ├── calculator/          # 계산기 관련 컴포넌트
+    │   ├── Calculator.jsx       # 계산기 패널 (배경/테마)
+    │   ├── CalculatorDisplay.jsx # 상단 표시(회색 식 + 메인 숫자), 스크롤바 숨김
+    │   └── CalculatorKeypad.jsx # C, +/-, %, ÷×−+, 숫자, ., ⌫, =
+    └── history/
+        └── History.jsx         # 기록 목록, 클릭 시 해당 결과를 입력창에 로드
 ```
 
 ## 완성된 기능

@@ -1,5 +1,5 @@
-import { useTheme } from '../context/ThemeContext.jsx'
-import { useCalculator } from '../context/CalculatorContext.jsx'
+import { useTheme } from '../../context/ThemeContext.jsx'
+import { useCalculator } from '../../context/CalculatorContext.jsx'
 
 function formatResult(value) {
   if (value === undefined || value === null) return '0'

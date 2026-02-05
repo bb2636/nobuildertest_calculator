@@ -1,5 +1,5 @@
-import { useTheme } from '../context/ThemeContext.jsx'
-import { useCalculator } from '../context/CalculatorContext.jsx'
+import { useTheme } from '../../context/ThemeContext.jsx'
+import { useCalculator } from '../../context/CalculatorContext.jsx'
 
 const btnBase =
   'w-full aspect-square max-w-[72px] max-h-[72px] rounded-[16px] text-[24px] font-medium flex items-center justify-center transition-colors active:scale-95 select-none'

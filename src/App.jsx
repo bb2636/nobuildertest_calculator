@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Sun, Moon, Clock, ArrowLeft } from 'lucide-react'
 import { useTheme } from './context/ThemeContext.jsx'
-import Calculator from './components/Calculator.jsx'
-import History from './components/History.jsx'
+import Calculator from './components/calculator/Calculator.jsx'
+import History from './components/history/History.jsx'
 
 export default function App() {
   const { isDark, toggleTheme } = useTheme()

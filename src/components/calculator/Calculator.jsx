@@ -1,4 +1,4 @@
-import { useTheme } from '../context/ThemeContext.jsx'
+import { useTheme } from '../../context/ThemeContext.jsx'
 import CalculatorDisplay from './CalculatorDisplay.jsx'
 import CalculatorKeypad from './CalculatorKeypad.jsx'
 

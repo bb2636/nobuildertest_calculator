@@ -1,4 +1,4 @@
-import { useCalculator } from '../context/CalculatorContext.jsx'
+import { useCalculator } from '../../context/CalculatorContext.jsx'
 
 function formatDisplay(value) {
   if (value === '' || value === undefined) return '0'
