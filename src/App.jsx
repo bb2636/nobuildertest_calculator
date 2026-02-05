@@ -35,16 +35,6 @@ export default function App() {
             >
             <button
               type="button"
-              aria-label="라이트 모드로 전환"
-              onClick={toggleTheme}
-              className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
-                !isDark ? 'bg-[#4B5EFC] text-white' : 'text-white/70 hover:text-white'
-              }`}
-            >
-              <Sun className="w-5 h-5" />
-            </button>
-            <button
-              type="button"
               aria-label="다크 모드로 전환"
               onClick={toggleTheme}
               className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
@@ -52,6 +42,16 @@ export default function App() {
               }`}
             >
               <Moon className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="라이트 모드로 전환"
+              onClick={toggleTheme}
+              className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
+                !isDark ? 'bg-[#4B5EFC] text-white' : 'text-white/70 hover:text-white'
+              }`}
+            >
+              <Sun className="w-5 h-5" />
             </button>
             </div>
           </div>

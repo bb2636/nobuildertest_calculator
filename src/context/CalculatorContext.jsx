@@ -7,6 +7,7 @@ export function CalculatorProvider({ children }) {
   const [currentValue, setCurrentValue] = useState('0')
   const [operator, setOperator] = useState(null)
   const [history, setHistory] = useState([])
+  const [lastExpression, setLastExpression] = useState('') // AC 전까지 위에 보여줄 식 (회색)
   const replaceNextDigit = useRef(false)
 
   const appendDigit = useCallback((digit) => {
@@ -41,6 +42,7 @@ export function CalculatorProvider({ children }) {
       replaceNextDigit.current = true
     } else {
       setPrevExpression(currentValue)
+      setCurrentValue('0')
       replaceNextDigit.current = true
     }
     setOperator(op)
@@ -51,6 +53,7 @@ export function CalculatorProvider({ children }) {
     const result = calculate(parseFloat(prevExpression), parseFloat(currentValue), operator)
     const expr = `${prevExpression} ${opSymbol(operator)} ${currentValue}`
     setHistory((h) => [{ expression: expr, result }, ...h].slice(0, 50))
+    setLastExpression(expr) // AC 전까지 위에 회색으로 유지
     setPrevExpression('')
     setOperator(null)
     setCurrentValue(String(result))
@@ -62,8 +65,12 @@ export function CalculatorProvider({ children }) {
       setPrevExpression('')
       setCurrentValue('0')
       setOperator(null)
+      setLastExpression('')
     } else {
       setCurrentValue('0')
+      setPrevExpression('')
+      setOperator(null)
+      setLastExpression('') // C 눌렀을 때도 위 회색 식 초기화
     }
   }, [])
 
@@ -83,6 +90,7 @@ export function CalculatorProvider({ children }) {
     setCurrentValue(String(result))
     setPrevExpression('')
     setOperator(null)
+    setLastExpression('')
     replaceNextDigit.current = false
   }, [])
 
@@ -96,6 +104,7 @@ export function CalculatorProvider({ children }) {
   const value = {
     display: currentValue,
     prevExpression,
+    lastExpression,
     currentValue,
     operator,
     history,
