@@ -11,10 +11,13 @@ export default function App() {
   const text = isDark ? 'text-calc-dark-text' : 'text-calc-light-text'
 
   return (
-    <div className={`min-h-screen ${pageBg} ${text} transition-colors`}>
-      <div className="container mx-auto px-4 max-w-4xl">
-        {/* 상단 바: 테마 스위치(중앙) + 기록 버튼(오른쪽) */}
-        <header className="flex items-center py-4 md:py-5">
+    <div className={`min-h-screen flex flex-col ${pageBg} ${text} transition-colors`}>
+      <div className="w-full md:container md:mx-auto px-3 md:px-4 md:max-w-4xl flex-1 flex flex-col min-h-0">
+        {/* 상단 바: safe area 아래로 내려서 가리지 않음 */}
+        <header
+          className="flex items-center py-4 md:py-5 flex-shrink-0"
+          style={{ paddingTop: 'max(1.25rem, env(safe-area-inset-top, 0px))' }}
+        >
           <div className="w-10 flex-shrink-0 flex items-center justify-start">
             {activeTab === 'history' && (
               <button
@@ -68,17 +71,20 @@ export default function App() {
           </div>
         </header>
 
-        <div className="flex flex-col md:flex-row md:gap-6 gap-6 items-stretch pb-6 md:pb-8">
-          {/* 계산기 영역 */}
+        <div
+          className="flex-1 flex flex-col md:flex-row justify-center items-stretch md:items-center md:gap-6 gap-4 min-h-0 min-w-0"
+          style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom, 0px))' }}
+        >
+          {/* 계산기 영역 - 모바일에서 화면 꽉 차게 */}
           <section
-            className={`flex-1 min-w-0 ${activeTab === 'calculator' ? 'block' : 'hidden md:block'}`}
+            className={`flex-1 flex flex-col min-h-0 min-w-0 w-full md:max-w-lg ${activeTab === 'calculator' ? 'flex' : 'hidden md:flex'}`}
           >
             <Calculator />
           </section>
 
           {/* 히스토리 영역 */}
           <section
-            className={`md:w-[280px] md:flex-shrink-0 min-w-0 ${activeTab === 'history' ? 'block' : 'hidden md:block'}`}
+            className={`flex flex-col justify-center md:w-[280px] md:flex-shrink-0 min-w-0 w-full ${activeTab === 'history' ? 'flex' : 'hidden md:flex'}`}
           >
             <History />
           </section>

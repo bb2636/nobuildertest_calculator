@@ -32,17 +32,17 @@ export default function CalculatorDisplay() {
   const showLastExpr = lastExpression !== ''
 
   return (
-    <div className="flex flex-col items-end justify-end min-h-[120px] px-2 pb-2">
+    <div className="flex flex-col items-end justify-end min-h-[140px] px-2 pb-2">
       {(showLastExpr || showLiveExpr) && (
         <span
-          className="text-[15px] leading-5 tracking-tight mb-1 text-gray-500 dark:text-white/60"
+          className="text-[22px] md:text-[24px] leading-tight tracking-tight mb-1.5 text-gray-500 dark:text-white/60"
           style={{ letterSpacing: '-0.5px' }}
         >
           {showLastExpr ? formatFullExpression(lastExpression) : `${formatDisplay(prevExpression)} ${operatorSymbol(operator)}`}
         </span>
       )}
       <span
-        className="text-[48px] md:text-[64px] font-semibold leading-tight break-all text-right max-w-full overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="text-[56px] md:text-[80px] font-semibold leading-tight break-all text-right max-w-full overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         style={{ lineHeight: 1.1 }}
       >
         {formatted}

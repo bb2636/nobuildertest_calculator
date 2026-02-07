@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 로컬/에뮬레이터/실기기 연동용 Cleartext 허용 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <!-- 실기기 연동 시 PC IP (ipconfig로 확인 후 필요 시 추가) -->
+        <domain includeSubdomains="true">172.30.1.45</domain>
+        <domain includeSubdomains="true">172.30.1.71</domain>
+    </domain-config>
+</network-security-config>

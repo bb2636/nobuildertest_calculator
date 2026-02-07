@@ -9,11 +9,13 @@ export default function Calculator() {
 
   return (
     <div
-      className={`${bg} ${text} rounded-calc p-4 md:p-6 flex flex-col gap-4 md:gap-6 min-w-0 max-w-full shadow-xl`}
+      className={`${bg} ${text} rounded-2xl md:rounded-calc p-4 md:p-6 flex flex-col flex-1 min-h-0 min-w-0 w-full max-w-full shadow-xl`}
       style={{ borderRadius: '24px' }}
     >
       <CalculatorDisplay />
-      <CalculatorKeypad />
+      <div className="flex-1 min-h-0 flex flex-col justify-center">
+        <CalculatorKeypad />
+      </div>
     </div>
   )
 }

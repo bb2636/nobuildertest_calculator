@@ -2,7 +2,7 @@ import { useTheme } from '../../context/ThemeContext.jsx'
 import { useCalculator } from '../../context/CalculatorContext.jsx'
 
 const btnBase =
-  'w-full aspect-square max-w-[72px] max-h-[72px] rounded-[16px] text-[24px] font-medium flex items-center justify-center transition-colors active:scale-95 select-none'
+  'w-full aspect-square max-w-full max-h-full min-w-0 min-h-0 rounded-[16px] text-[22px] md:text-[24px] font-medium flex items-center justify-center transition-colors active:scale-95 select-none'
 
 export default function CalculatorKeypad() {
   const { isDark } = useTheme()
@@ -76,7 +76,7 @@ export default function CalculatorKeypad() {
   ]
 
   return (
-    <div className="grid grid-cols-4 gap-2 md:gap-3 w-full max-w-[280px] md:max-w-[320px] mx-auto">
+    <div className="grid grid-cols-4 grid-rows-5 gap-3 md:gap-4 w-full max-w-full md:max-w-[320px] mx-auto aspect-[4/5]">
       {grid.flat().map((cell, i) => (
         <button
           key={i}
