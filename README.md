@@ -113,4 +113,6 @@ npm run preview
 
 ## 참고
 
+<img width="1080" height="2340" alt="image" src="https://github.com/user-attachments/assets/bc455d29-b090-48df-a026-319a219ecc4e" />
+
 - 피그마: [노빌더 교육생 테스트](https://www.figma.com/design/8Ec92DyjlSqs5j1CvDUIJX) — Calculator (node-id=2-15384)
